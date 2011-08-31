@@ -67,16 +67,7 @@ Ircd: class {
 
     mainLoop: func {
         loop(||
-            /* Ok this is absurd.
-             * Next on my "fix me before everyone explodes from frustration"
-             *+ list is os/Time.
-             */
-            version(windows) {
-                Sleep(100)
-            }
-            version(!windows) {
-                usleep(100000000)
-            }
+            Time sleepSec(100)
             true
         )
     }
